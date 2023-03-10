@@ -7,7 +7,7 @@
 </div>
 
 <hr>
-
+<% if session[:user_id] != nil %>
 <div>
   <div>
     <h2>
@@ -76,10 +76,6 @@
     <table border="1">
       <tr>
         <th>
-          ID
-        </th>
-
-        <th>
           Name
         </th>
 
@@ -117,9 +113,6 @@
 
       <% @list_of_programs.each do |a_program| %>
       <tr>
-        <td>
-          <%= a_program.id %>
-        </td>
 
         <td>
           <%= a_program.name %>
@@ -162,5 +155,9 @@
     </table>
   </div>
 </div>
+
+<% else %>
+  <div style="color: red">You are not signed in!</div>
+<%end%>
 
 <hr>

@@ -27,7 +27,7 @@
 
       <div>
         <label for="group_box">
-          Group
+          Bank
         </label>
 
         <input type="text" id="group_box" name="query_group">
@@ -43,7 +43,7 @@
 
       <div>
         <label for="last_contact_box">
-          Last contact
+          Name
         </label>
 
         <input type="text" id="last_contact_box" name="query_last_contact">
@@ -80,6 +80,25 @@
   </div>
 </div>
 
+<%= search_form_for @q do |f| %>
+  <p>Narrow results:</p>
+
+  <div>
+    <%= f.label :group_cont, "Bank containing" %>
+    <%= f.text_field :group_cont, :group => "Enter a few characters" %>
+  </div>
+
+  <div>
+    <%= f.label :position_cont, "Position is..." %>
+    <%= f.text_field :position_cont, :position => "Year greater than or equal to" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+  
+  <a href="/contacts">Clear filters</a>
+<% end %>
+
+
 <hr>
 <div>
   <div>
@@ -94,7 +113,7 @@
         </th>
 
         <th>
-          Group
+          Bank
         </th>
 
         <th>
@@ -102,7 +121,7 @@
         </th>
 
         <th>
-          Last contact
+          Name
         </th>
 
         <th>
@@ -181,6 +200,8 @@
   </div>
 </div>
 
-<% %>
+<% else %>
+  <div style="color: red">You are not signed in!</div>
+<%end%>
 
 <hr>
