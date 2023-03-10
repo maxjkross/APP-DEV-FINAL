@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Bank #<%= @the_bank.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/banks">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_bank/<%= @the_bank.id %>">
+          Delete bank
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Bank type
+      </dt>
+      <dd>
+        <%= @the_bank.bank_type %>
+      </dd>
+
+      <dt>
+        Size
+      </dt>
+      <dd>
+        <%= @the_bank.size %>
+      </dd>
+
+      <dt>
+        Location
+      </dt>
+      <dd>
+        <%= @the_bank.location %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_bank.name %>
+      </dd>
+
+      <dt>
+        Specialty
+      </dt>
+      <dd>
+        <%= @the_bank.specialty %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bank.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bank.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit bank
+    </h2>
+
+    <form action="/modify_bank/<%= @the_bank.id %>"  method="post" >
+      <div>
+        <label for="bank_type_box">
+          Bank type
+        </label>
+
+        <input type="text" id="bank_type_box" name="query_bank_type" value="<%= @the_bank.bank_type %>">
+      </div>
+
+      <div>
+        <label for="size_box">
+          Size
+        </label>
+
+        <input type="text" id="size_box" name="query_size" value="<%= @the_bank.size %>">
+      </div>
+
+      <div>
+        <label for="location_box">
+          Location
+        </label>
+
+        <input type="text" id="location_box" name="query_location" value="<%= @the_bank.location %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_bank.name %>">
+      </div>
+
+      <div>
+        <label for="specialty_box">
+          Specialty
+        </label>
+
+        <input type="text" id="specialty_box" name="query_specialty" value="<%= @the_bank.specialty %>">
+      </div>
+
+      <button>
+        Update bank
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

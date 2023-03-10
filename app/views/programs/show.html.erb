@@ -1,0 +1,146 @@
+<div>
+  <div>
+    <h1>
+      Program #<%= @the_program.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/programs">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_program/<%= @the_program.id %>">
+          Delete program
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_program.name %>
+      </dd>
+
+      <dt>
+        Cover letter
+      </dt>
+      <dd>
+        <%= @the_program.cover_letter %>
+      </dd>
+
+      <dt>
+        Role
+      </dt>
+      <dd>
+        <%= @the_program.role %>
+      </dd>
+
+      <dt>
+        Division
+      </dt>
+      <dd>
+        <%= @the_program.division %>
+      </dd>
+
+      <dt>
+        App link
+      </dt>
+      <dd>
+        <%= @the_program.app_link %>
+      </dd>
+
+      <dt>
+        Applied
+      </dt>
+      <dd>
+        <%= @the_program.applied %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_program.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_program.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit program
+    </h2>
+
+    <form action="/modify_program/<%= @the_program.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_program.name %>">
+      </div>
+
+      <div>
+        <label for="cover_letter_box">
+          Cover letter
+        </label>
+
+        <input type="text" id="cover_letter_box" name="query_cover_letter" value="<%= @the_program.cover_letter %>">
+      </div>
+
+      <div>
+        <label for="role_box">
+          Role
+        </label>
+
+        <input type="text" id="role_box" name="query_role" value="<%= @the_program.role %>">
+      </div>
+
+      <div>
+        <label for="division_box">
+          Division
+        </label>
+
+        <input type="text" id="division_box" name="query_division" value="<%= @the_program.division %>">
+      </div>
+
+      <div>
+        <label for="app_link_box">
+          App link
+        </label>
+
+        <input type="text" id="app_link_box" name="query_app_link" value="<%= @the_program.app_link %>">
+      </div>
+
+      <div>
+        <label for="applied_box">
+          Applied
+        </label>
+
+        <input type="text" id="applied_box" name="query_applied" value="<%= @the_program.applied %>">
+      </div>
+
+      <button>
+        Update program
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

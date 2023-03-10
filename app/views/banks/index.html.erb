@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all banks
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new bank
+    </h2>
+
+    <form action="/insert_bank" method="post">
+      <div>
+        <label for="bank_type_box">
+          Bank type
+        </label>
+
+        <input type="text" id="bank_type_box" name="query_bank_type">
+      </div>
+
+      <div>
+        <label for="size_box">
+          Size
+        </label>
+
+        <input type="text" id="size_box" name="query_size">
+      </div>
+
+      <div>
+        <label for="location_box">
+          Location
+        </label>
+
+        <input type="text" id="location_box" name="query_location">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="specialty_box">
+          Specialty
+        </label>
+
+        <input type="text" id="specialty_box" name="query_specialty">
+      </div>
+
+      <button>
+        Create bank
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Bank type
+        </th>
+
+        <th>
+          Size
+        </th>
+
+        <th>
+          Location
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Specialty
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_banks.each do |a_bank| %>
+      <tr>
+        <td>
+          <%= a_bank.id %>
+        </td>
+
+        <td>
+          <%= a_bank.bank_type %>
+        </td>
+
+        <td>
+          <%= a_bank.size %>
+        </td>
+
+        <td>
+          <%= a_bank.location %>
+        </td>
+
+        <td>
+          <%= a_bank.name %>
+        </td>
+
+        <td>
+          <%= a_bank.specialty %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_bank.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_bank.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/banks/<%= a_bank.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
