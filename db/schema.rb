@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_10_034748) do
+ActiveRecord::Schema.define(version: 2023_03_10_035414) do
 
   create_table "banks", force: :cascade do |t|
     t.string "bank_type"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2023_03_10_034748) do
     t.string "division"
     t.string "app_link"
     t.string "applied"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

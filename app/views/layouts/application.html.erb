@@ -16,6 +16,23 @@
   </head>
 
   <body>
+      <ul>
+      <li><a href="/banks">Banks</a>
+      <li><a href="/programs">Programs</a>
+      <li><a href="/contacts">Actors</a>
+
+      
+      <%if @current_user == nil%>
+        <li><a href="/user_sign_in">Sign In</a>
+        <li><a href="/user_sign_up">Sign Up</a>
+      <%else %>
+
+        <li><a href="/user_sign_out">Sign Out</a>
+      <% end %>
+    </ul>
+
+    <div style="color: green"><%= notice%></div>
+    <div style="color: red"><%= alert%></div>
     <%= yield %>
   </body>
 </html>
